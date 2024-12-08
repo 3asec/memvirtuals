@@ -106,7 +106,7 @@ def sell_tx(token_address_checksum, balance):
     token_address = token_address_checksum.lower()
     tx = swapper.functions.mempoolSell(
         web3.to_checksum_address(token_address),
-        balance
+        int(balance)
     ).build_transaction(
         {
             "from": web3.to_checksum_address(address),
